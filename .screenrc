@@ -1,0 +1,4 @@
+defscrollback 10000
+defwrap off
+hardstatus alwayslastline
+hardstatus string '%{= 0w} %{= 07}[%{-}%0c%{= 07}]%{-} [%-Lw%{=0W}%{+b}%50>%n%f* %t%{-b}%{= 0w}%+Lw]%<'
