@@ -1,0 +1,19 @@
+[alias]
+
+    up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+    co = !sh -c 'git checkout "$0"'
+    mg = !sh -c 'git merge --no-commit --no-ff "$0"'
+    ps = !sh -c 'git push origin "$0"'
+    cr = !sh -c 'git cherry-pick --no-commit "$0"'
+    ups = !sh -c 'git stash && git up && git stash pop'
+    br = !sh -c 'git branch "$0" && git push origin "$0" && git branch --set-upstream "$0" "origin/$0"'
+    lgd = "!f() { git log --format='%Cred%h%Creset %C(yellow)%s%Creset %C(blue)(%ae)%Creset %C(green)(%cr)%Creset' --no-merges ${1-master}..${2-master-armstrong} .; }; f"
+    lgd2 = "!f() { git log --format='%Cred%h%Creset %C(yellow)%s%Creset %C(blue)(%ae)%Creset %C(green)(%cr)%Creset' --no-merges ${1-release}..${2-master} .; }; f"
+    # copy current branchname into clipboard
+    bc = !sh -c 'git branch | grep \"*\" | cut -d \" \" -f 2 | tr -d \"\n\" | pbcopy'
+
+[user]
+	name = Manoj Ganesan
+	email = manojganesan@gmail.com
+[color]
+	ui = auto
